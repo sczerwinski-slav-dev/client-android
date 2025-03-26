@@ -1,24 +1,25 @@
 package dev.slav.client.android
 
 import androidx.test.platform.app.InstrumentationRegistry
-import androidx.test.ext.junit.runners.AndroidJUnit4
-
-import org.junit.Test
-import org.junit.runner.RunWith
-
-import org.junit.Assert.*
+import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
 
 /**
  * Instrumented test, which will execute on an Android device.
  *
  * See [testing documentation](http://d.android.com/tools/testing).
  */
-@RunWith(AndroidJUnit4::class)
+@DisplayName(value = "Example instrumented test")
 class ExampleInstrumentedTest {
     @Test
+    @DisplayName(
+        value = "GIVEN test starts, " +
+                "WHEN get application context, " +
+                "THEN package name should equal to 'dev.slav.client.android'"
+    )
     fun useAppContext() {
-        // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("dev.slav.client.android", appContext.packageName)
+        assertThat(appContext.packageName).isEqualTo("dev.slav.client.android")
     }
 }
