@@ -1,18 +1,25 @@
 [versions]
 agp = "8.9.1"
 kotlin = "2.1.20"
+serialization = "1.8.0"
+ksp = "2.1.20-1.0.32"
 coreKtx = "1.15.0"
 androidxJunit = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
 composeBom = "2025.03.01"
+nav = "2.8.9"
+hiltNav = "1.2.0"
+hilt = "2.51.1"
 junit = "5.12.1"
 assertj = "3.27.3"
 androidJUnit5 = "1.12.0.0"
 detekt = "1.23.8"
 
 [libraries]
+kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -28,6 +35,12 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-android = { group = "androidx.compose.ui", name = "ui-test-android" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "nav" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNav" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
 
@@ -37,12 +50,22 @@ assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "as
 androidx-ui = ["androidx-ui", "androidx-ui-graphics", "androidx-ui-tooling-preview", "androidx-material3"]
 androidx-ui-debug = ["androidx-ui-tooling", "androidx-ui-test-manifest"]
 
+androidx-navigation = ["androidx-navigation-compose", "androidx-hilt-navigation-compose"]
+
+hilt = ["hilt-android"]
+hilt-ksp = ["hilt-android-compiler"]
+
 [plugins]
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
+
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
 
 android-junit5 = { id = "de.mannodermaus.android-junit5", version.ref = "androidJUnit5"}
 

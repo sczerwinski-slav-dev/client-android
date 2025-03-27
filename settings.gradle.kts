@@ -28,3 +28,5 @@ rootProject.name = "Slav.Dev"
 include(":app")
 
 include(":modules:common:ui")
+
+include(":modules:features:posts")

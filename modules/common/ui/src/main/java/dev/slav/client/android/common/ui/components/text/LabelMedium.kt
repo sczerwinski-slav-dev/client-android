@@ -11,20 +11,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import dev.slav.client.android.common.ui.preview.PreviewWrapper
 
 /**
- * Large body text.
+ * Medium label text.
  *
- * @param text Text of the body.
+ * @param text Text of the label.
  * @param modifier Modifier to be applied to this text.
  */
 @Composable
-fun BodyLarge(
+fun LabelMedium(
     text: String,
     modifier: Modifier = Modifier
 ) {
     Text(
         text = text,
         modifier = modifier,
-        style = MaterialTheme.typography.bodyLarge
+        style = MaterialTheme.typography.labelMedium
     )
 }
 
@@ -33,18 +33,18 @@ fun BodyLarge(
     uiMode = UI_MODE_NIGHT_NO or UI_MODE_TYPE_NORMAL
 )
 @Composable
-fun BodyLargePreviewDay() = BodyLargePreview()
+fun LabelMediumPreviewDay() = LabelMediumPreview()
 
 @Preview(
     showBackground = true,
     uiMode = UI_MODE_NIGHT_YES or UI_MODE_TYPE_NORMAL
 )
 @Composable
-fun BodyLargePreviewNight() = BodyLargePreview()
+fun LabelMediumPreviewNight() = LabelMediumPreview()
 
 @Composable
-private fun BodyLargePreview() {
+private fun LabelMediumPreview() {
     PreviewWrapper {
-        BodyLarge("Lorem ipsum dolor sit amet,\nconsectetur adipiscing elit")
+        LabelMedium("Lorem ipsum")
     }
 }

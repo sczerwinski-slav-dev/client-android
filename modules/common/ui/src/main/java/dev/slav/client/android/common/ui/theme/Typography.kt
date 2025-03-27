@@ -62,6 +62,18 @@ private fun openSansMediumStyle(
         letterSpacing = letterSpacing,
     )
 
+private fun openSansSemiBoldStyle(
+    fontSize: TextUnit,
+    lineHeight: TextUnit,
+    letterSpacing: TextUnit = 0.sp,
+) : TextStyle =
+    openSansStyle(
+        fontWeight = FontWeight.SemiBold,
+        fontSize = fontSize,
+        lineHeight = lineHeight,
+        letterSpacing = letterSpacing,
+    )
+
 val Typography = Typography(
     // Display:
     displayLarge = openSansLightStyle(fontSize = 57.sp, lineHeight = 64.sp),
@@ -72,9 +84,9 @@ val Typography = Typography(
     headlineMedium = openSansLightStyle(fontSize = 28.sp, lineHeight = 36.sp),
     headlineSmall = openSansLightStyle(fontSize = 24.sp, lineHeight = 32.sp),
     // Title:
-    titleLarge = openSansMediumStyle(fontSize = 22.sp, lineHeight = 28.sp),
-    titleMedium = openSansMediumStyle(fontSize = 16.sp, lineHeight = 24.sp),
-    titleSmall = openSansMediumStyle(fontSize = 14.sp, lineHeight = 20.sp),
+    titleLarge = openSansSemiBoldStyle(fontSize = 22.sp, lineHeight = 28.sp),
+    titleMedium = openSansSemiBoldStyle(fontSize = 16.sp, lineHeight = 24.sp),
+    titleSmall = openSansSemiBoldStyle(fontSize = 14.sp, lineHeight = 20.sp),
     // Body:
     bodyLarge = openSansNormalStyle(fontSize = 16.sp, lineHeight = 24.sp),
     bodyMedium = openSansNormalStyle(fontSize = 14.sp, lineHeight = 20.sp),
