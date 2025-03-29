@@ -8,8 +8,16 @@ import kotlinx.serialization.Serializable
 sealed interface PostsNavDestination {
 
     /**
-     * Navigation destination for list of posts.
+     * Navigation destination for list of blog posts.
      */
     @Serializable
     data object PostsList : PostsNavDestination
+
+    /**
+     * Navigation destination for a blog post.
+     *
+     * @property postId ID of the blog post.
+     */
+    @Serializable
+    data class Post(val postId: String) : PostsNavDestination
 }

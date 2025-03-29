@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.Surface
 import dagger.hilt.android.AndroidEntryPoint
 import dev.slav.client.android.common.ui.theme.SlavDevTheme
 import dev.slav.client.android.navigation.MainNavHost
@@ -22,7 +23,11 @@ class MainActivity : ComponentActivity() {
                 dynamicColor = false,
                 darkTheme = true
             ) {
-                MainNavHost()
+                // Surface added to avoid background color change
+                // during navigation transition:
+                Surface {
+                    MainNavHost()
+                }
             }
         }
     }

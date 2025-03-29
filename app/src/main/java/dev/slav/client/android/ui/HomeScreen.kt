@@ -6,6 +6,8 @@ import android.content.res.Configuration.UI_MODE_TYPE_NORMAL
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -41,6 +43,7 @@ private fun HomeScreenContent(
 ) {
     val homeNavController = rememberNavController()
     var currentNavItem by remember { mutableStateOf(HomeNavItem.default) }
+    val snackbarHostState = remember { SnackbarHostState() }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -56,10 +59,12 @@ private fun HomeScreenContent(
                     )
                 }
             )
-        }
+        },
+        snackbarHost = { SnackbarHost(hostState = snackbarHostState) }
     ) { contentPadding ->
         if (!LocalInspectionMode.current) {
             HomeNavHost(
+                snackbarHostState = snackbarHostState,
                 homeNavController = homeNavController,
                 parentNavController = parentNavController,
                 modifier = Modifier

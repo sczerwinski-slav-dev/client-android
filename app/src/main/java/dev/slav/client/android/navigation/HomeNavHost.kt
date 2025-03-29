@@ -1,5 +1,6 @@
 package dev.slav.client.android.navigation
 
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -25,6 +26,7 @@ import dev.slav.client.android.posts.ui.PostsListScreen
  */
 @Composable
 fun HomeNavHost(
+    snackbarHostState: SnackbarHostState,
     homeNavController: NavHostController,
     parentNavController: NavController,
     modifier: Modifier = Modifier
@@ -41,7 +43,10 @@ fun HomeNavHost(
                 navDeepLink<PostsNavDestination.PostsList>(basePath = "$navBaseUrl/posts")
             )
         ) {
-            PostsListScreen(navController = parentNavController)
+            PostsListScreen(
+                snackbarHostState = snackbarHostState,
+                navController = parentNavController
+            )
         }
     }
 }

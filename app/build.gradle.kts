@@ -40,6 +40,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
+        buildConfig = true
         compose = true
     }
 }
@@ -52,10 +53,10 @@ detekt {
 dependencies {
     implementation(project(":modules:features:posts"))
 
+    implementation(project(":modules:common:network"))
     implementation(project(":modules:common:ui"))
 
     implementation(libs.kotlinx.serialization)
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -64,6 +65,7 @@ dependencies {
     implementation(libs.bundles.androidx.navigation)
     implementation(libs.bundles.hilt)
     ksp(libs.bundles.hilt.ksp)
+    implementation(libs.timber)
 
     testImplementation(libs.junit.jupiter.api)
     testRuntimeOnly(libs.junit.jupiter.engine)
@@ -77,4 +79,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.android)
 
     debugImplementation(libs.bundles.androidx.ui.debug)
+
+    detekt(libs.bundles.detekt)
 }

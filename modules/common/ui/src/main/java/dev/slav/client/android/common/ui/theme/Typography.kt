@@ -17,7 +17,7 @@ private fun openSansStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     TextStyle(
         fontFamily = OpenSansFamily,
         fontWeight = fontWeight,
@@ -30,7 +30,7 @@ private fun openSansLightStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
         fontWeight = FontWeight.Light,
         fontSize = fontSize,
@@ -42,21 +42,9 @@ private fun openSansNormalStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
         fontWeight = FontWeight.Normal,
-        fontSize = fontSize,
-        lineHeight = lineHeight,
-        letterSpacing = letterSpacing,
-    )
-
-private fun openSansMediumStyle(
-    fontSize: TextUnit,
-    lineHeight: TextUnit,
-    letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
-    openSansStyle(
-        fontWeight = FontWeight.Medium,
         fontSize = fontSize,
         lineHeight = lineHeight,
         letterSpacing = letterSpacing,
@@ -66,7 +54,7 @@ private fun openSansSemiBoldStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
         fontWeight = FontWeight.SemiBold,
         fontSize = fontSize,
@@ -92,7 +80,7 @@ val Typography = Typography(
     bodyMedium = openSansNormalStyle(fontSize = 14.sp, lineHeight = 20.sp),
     bodySmall = openSansNormalStyle(fontSize = 12.sp, lineHeight = 16.sp),
     // Label:
-    labelLarge = openSansMediumStyle(fontSize = 14.sp, lineHeight = 20.sp),
-    labelMedium = openSansMediumStyle(fontSize = 12.sp, lineHeight = 16.sp),
-    labelSmall = openSansMediumStyle(fontSize = 11.sp, lineHeight = 16.sp),
+    labelLarge = openSansSemiBoldStyle(fontSize = 14.sp, lineHeight = 20.sp),
+    labelMedium = openSansSemiBoldStyle(fontSize = 12.sp, lineHeight = 16.sp),
+    labelSmall = openSansSemiBoldStyle(fontSize = 11.sp, lineHeight = 16.sp),
 )

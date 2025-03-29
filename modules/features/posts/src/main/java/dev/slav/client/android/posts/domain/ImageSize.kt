@@ -28,5 +28,5 @@ enum class ImageSize(
     /**
      * Large image.
      */
-    Large(qualifier = "@3");
+    Large(qualifier = "@3")
 }

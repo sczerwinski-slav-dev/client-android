@@ -27,6 +27,7 @@ import dev.slav.client.android.posts.ui.PreviewPosts
 @Composable
 fun PostsList(
     posts: List<PostStub>,
+    onPostClick: (PostStub) -> Unit,
     modifier: Modifier = Modifier,
 ) {
     LazyColumn(
@@ -37,6 +38,7 @@ fun PostsList(
         items(items = posts, key = PostStub::id) { post ->
             PostCard(
                 post = post,
+                onClick = { onPostClick(post) },
                 modifier = Modifier.fillMaxWidth()
             )
         }
@@ -62,6 +64,7 @@ private fun PostsListPreview() {
     PreviewWrapper {
         PostsList(
             posts = PreviewPosts,
+            onPostClick = {},
             modifier = Modifier.fillMaxSize()
         )
     }

@@ -22,6 +22,9 @@ private val LightColorScheme = lightColorScheme(
     tertiary = DeepOrange800
 )
 
+/**
+ * Slav.Dev application theme.
+ */
 @Composable
 fun SlavDevTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
