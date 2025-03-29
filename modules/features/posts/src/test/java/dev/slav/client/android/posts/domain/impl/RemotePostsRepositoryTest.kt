@@ -60,9 +60,8 @@ class RemotePostsRepositoryTest {
             "THEN return a failure"
     )
     fun findAllShouldReturnFailure() {
-        wheneverBlocking {
-            postsApi.getPosts()
-        } doReturn Result.failure(RuntimeException("Test error"))
+        val exception = RuntimeException("Test error")
+        wheneverBlocking { postsApi.getPosts() } doReturn Result.failure(exception)
 
         val result = runBlocking { classUnderTest.findAll() }
 
@@ -77,9 +76,7 @@ class RemotePostsRepositoryTest {
     )
     fun findAllShouldReturnCorrectException() {
         val exception = RuntimeException("Test error")
-        wheneverBlocking {
-            postsApi.getPosts()
-        } doReturn Result.failure(RuntimeException("Test error"))
+        wheneverBlocking { postsApi.getPosts() } doReturn Result.failure(exception)
 
         val result = runBlocking { classUnderTest.findAll() }
 
