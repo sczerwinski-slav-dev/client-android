@@ -51,4 +51,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.android)
 
     debugImplementation(libs.bundles.androidx.ui.debug)
+
+    detekt(libs.bundles.detekt)
 }

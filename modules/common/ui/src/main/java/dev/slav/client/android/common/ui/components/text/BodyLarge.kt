@@ -11,7 +11,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import dev.slav.client.android.common.ui.preview.PreviewWrapper
 
 /**
- * Large body text
+ * Large body text.
+ *
+ * @param text Text of the body.
+ * @param modifier Modifier to be applied to this text.
  */
 @Composable
 fun BodyLarge(

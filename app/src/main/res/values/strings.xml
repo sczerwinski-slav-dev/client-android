@@ -1,3 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Slav.Dev</string>
+    <string name="app_name" translatable="false">Slav.Dev</string>
+
+    <string name="home_nav_item_home">Home</string>
+
+    <string name="nav_base_url" translatable="false">https://slav.dev</string>
 </resources>

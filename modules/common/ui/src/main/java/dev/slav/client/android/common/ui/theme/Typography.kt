@@ -17,7 +17,7 @@ private fun openSansStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     TextStyle(
         fontFamily = OpenSansFamily,
         fontWeight = fontWeight,
@@ -30,7 +30,7 @@ private fun openSansLightStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
         fontWeight = FontWeight.Light,
         fontSize = fontSize,
@@ -42,7 +42,7 @@ private fun openSansNormalStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
         fontWeight = FontWeight.Normal,
         fontSize = fontSize,
@@ -50,13 +50,13 @@ private fun openSansNormalStyle(
         letterSpacing = letterSpacing,
     )
 
-private fun openSansMediumStyle(
+private fun openSansSemiBoldStyle(
     fontSize: TextUnit,
     lineHeight: TextUnit,
     letterSpacing: TextUnit = 0.sp,
-) : TextStyle =
+): TextStyle =
     openSansStyle(
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.SemiBold,
         fontSize = fontSize,
         lineHeight = lineHeight,
         letterSpacing = letterSpacing,
@@ -72,15 +72,15 @@ val Typography = Typography(
     headlineMedium = openSansLightStyle(fontSize = 28.sp, lineHeight = 36.sp),
     headlineSmall = openSansLightStyle(fontSize = 24.sp, lineHeight = 32.sp),
     // Title:
-    titleLarge = openSansMediumStyle(fontSize = 22.sp, lineHeight = 28.sp),
-    titleMedium = openSansMediumStyle(fontSize = 16.sp, lineHeight = 24.sp),
-    titleSmall = openSansMediumStyle(fontSize = 14.sp, lineHeight = 20.sp),
+    titleLarge = openSansSemiBoldStyle(fontSize = 22.sp, lineHeight = 28.sp),
+    titleMedium = openSansSemiBoldStyle(fontSize = 16.sp, lineHeight = 24.sp),
+    titleSmall = openSansSemiBoldStyle(fontSize = 14.sp, lineHeight = 20.sp),
     // Body:
     bodyLarge = openSansNormalStyle(fontSize = 16.sp, lineHeight = 24.sp),
     bodyMedium = openSansNormalStyle(fontSize = 14.sp, lineHeight = 20.sp),
     bodySmall = openSansNormalStyle(fontSize = 12.sp, lineHeight = 16.sp),
     // Label:
-    labelLarge = openSansMediumStyle(fontSize = 14.sp, lineHeight = 20.sp),
-    labelMedium = openSansMediumStyle(fontSize = 12.sp, lineHeight = 16.sp),
-    labelSmall = openSansMediumStyle(fontSize = 11.sp, lineHeight = 16.sp),
+    labelLarge = openSansSemiBoldStyle(fontSize = 14.sp, lineHeight = 20.sp),
+    labelMedium = openSansSemiBoldStyle(fontSize = 12.sp, lineHeight = 16.sp),
+    labelSmall = openSansSemiBoldStyle(fontSize = 11.sp, lineHeight = 16.sp),
 )
