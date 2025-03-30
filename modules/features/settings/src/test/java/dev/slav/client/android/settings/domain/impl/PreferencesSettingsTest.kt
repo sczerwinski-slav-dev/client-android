@@ -3,6 +3,8 @@ package dev.slav.client.android.settings.domain.impl
 import android.content.Context
 import android.content.SharedPreferences
 import app.cash.turbine.test
+import dev.slav.client.android.settings.domain.Settings.Companion.DEFAULT_DARK_MODE
+import dev.slav.client.android.settings.domain.Settings.Companion.DEFAULT_SYSTEM_THEME
 import kotlinx.coroutines.test.runTest
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeEach
@@ -65,9 +67,7 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
 
         classUnderTest.systemTheme.test {
-            val result = awaitItem()
-
-            assertThat(result).isFalse()
+            assertThat(awaitItem()).isFalse()
         }
     }
 
@@ -82,9 +82,7 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
 
         classUnderTest.systemTheme.test {
-            val result = awaitItem()
-
-            assertThat(result).isTrue()
+            assertThat(awaitItem()).isTrue()
         }
     }
 
@@ -99,9 +97,7 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
 
         classUnderTest.darkMode.test {
-            val result = awaitItem()
-
-            assertThat(result).isNull()
+            assertThat(awaitItem()).isNull()
         }
     }
 
@@ -116,9 +112,7 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
 
         classUnderTest.darkMode.test {
-            val result = awaitItem()
-
-            assertThat(result).isFalse()
+            assertThat(awaitItem()).isFalse()
         }
     }
 
@@ -152,12 +146,11 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
         whenever(sharedPreferences.edit()) doReturn sharedPreferencesEditor
 
-        classUnderTest.setSystemTheme(true)
-
         classUnderTest.systemTheme.test {
-            val result = awaitItem()
+            assertThat(awaitItem()).isEqualTo(DEFAULT_SYSTEM_THEME)
+            classUnderTest.setSystemTheme(true)
 
-            assertThat(result).isTrue()
+            assertThat(awaitItem()).isTrue()
         }
     }
 
@@ -191,12 +184,11 @@ class PreferencesSettingsTest {
         val classUnderTest = PreferencesSettings(contextProvider)
         whenever(sharedPreferences.edit()) doReturn sharedPreferencesEditor
 
-        classUnderTest.setDarkMode(true)
-
         classUnderTest.darkMode.test {
-            val result = awaitItem()
+            assertThat(awaitItem()).isEqualTo(DEFAULT_DARK_MODE)
+            classUnderTest.setDarkMode(true)
 
-            assertThat(result).isTrue()
+            assertThat(awaitItem()).isTrue()
         }
     }
 
@@ -226,16 +218,16 @@ class PreferencesSettingsTest {
             "THEN the null value should be emitted"
     )
     fun setDarkModeNullShouldUpdateEmittedValue() = runTest {
-        initEmptyPreferences()
+        val initialDarkMode = true
+        initPreferences(systemTheme = false, darkMode = initialDarkMode)
         val classUnderTest = PreferencesSettings(contextProvider)
         whenever(sharedPreferences.edit()) doReturn sharedPreferencesEditor
 
-        classUnderTest.setDarkMode(null)
-
         classUnderTest.darkMode.test {
-            val result = awaitItem()
+            assertThat(awaitItem()).isEqualTo(initialDarkMode)
+            classUnderTest.setDarkMode(null)
 
-            assertThat(result).isNull()
+            assertThat(awaitItem()).isNull()
         }
     }
 }

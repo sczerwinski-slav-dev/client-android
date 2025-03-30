@@ -5,6 +5,8 @@ import android.content.SharedPreferences
 import androidx.core.content.edit
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dev.slav.client.android.settings.domain.Settings
+import dev.slav.client.android.settings.domain.Settings.Companion.DEFAULT_DARK_MODE
+import dev.slav.client.android.settings.domain.Settings.Companion.DEFAULT_SYSTEM_THEME
 import it.czerwinski.android.hilt.annotations.Bound
 import it.czerwinski.android.hilt.getValue
 import kotlinx.coroutines.CoroutineScope
@@ -32,8 +34,8 @@ class PreferencesSettings @Inject constructor(
     private val sharedPreferences: SharedPreferences
         get() = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE)
 
-    private val _systemTheme = MutableStateFlow(false)
-    private val _darkMode = MutableStateFlow<Boolean?>(null)
+    private val _systemTheme = MutableStateFlow(DEFAULT_SYSTEM_THEME)
+    private val _darkMode = MutableStateFlow<Boolean?>(DEFAULT_DARK_MODE)
 
     override val systemTheme: Flow<Boolean>
         get() = _systemTheme
@@ -42,7 +44,7 @@ class PreferencesSettings @Inject constructor(
         get() = _darkMode
 
     init {
-        val systemTheme = sharedPreferences.getBoolean(KEY_SYSTEM_THEME, false)
+        val systemTheme = sharedPreferences.getBoolean(KEY_SYSTEM_THEME, DEFAULT_SYSTEM_THEME)
 
         val overrideDarkMode = sharedPreferences.contains(KEY_DARK_MODE)
         val darkMode = if (overrideDarkMode) {

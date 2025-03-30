@@ -35,4 +35,17 @@ interface Settings {
      * @param newDarkMode New dark mode setting.
      */
     suspend fun setDarkMode(newDarkMode: Boolean?)
+
+    companion object {
+
+        /**
+         * Default system theme setting.
+         */
+        const val DEFAULT_SYSTEM_THEME: Boolean = false
+
+        /**
+         * Default dark mode setting.
+         */
+        val DEFAULT_DARK_MODE: Boolean? = null
+    }
 }

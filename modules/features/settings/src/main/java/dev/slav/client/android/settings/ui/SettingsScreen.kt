@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import dev.slav.client.android.common.ui.preview.PreviewWrapper
+import dev.slav.client.android.settings.domain.Settings
 import dev.slav.client.android.settings.ui.layouts.Settings
 import dev.slav.client.android.settings.vm.SettingsViewModel
 
@@ -23,8 +24,8 @@ import dev.slav.client.android.settings.vm.SettingsViewModel
 fun SettingsScreen(
     viewModel: SettingsViewModel = hiltViewModel()
 ) {
-    val systemTheme by viewModel.systemTheme.collectAsState(initial = false)
-    val darkMode by viewModel.darkMode.collectAsState(initial = null)
+    val systemTheme by viewModel.systemTheme.collectAsState(initial = Settings.DEFAULT_SYSTEM_THEME)
+    val darkMode by viewModel.darkMode.collectAsState(initial = Settings.DEFAULT_DARK_MODE)
 
     SettingsScreen(
         systemTheme = systemTheme,
