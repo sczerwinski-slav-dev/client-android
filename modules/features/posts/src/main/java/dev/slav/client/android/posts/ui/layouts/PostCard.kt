@@ -9,10 +9,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
-import dev.slav.client.android.common.ui.components.text.BodyLarge
+import dev.slav.client.android.common.ui.components.text.BodyMedium
 import dev.slav.client.android.common.ui.components.text.LabelLarge
 import dev.slav.client.android.common.ui.components.text.Secondary
-import dev.slav.client.android.common.ui.components.text.TitleLarge
+import dev.slav.client.android.common.ui.components.text.TitleMedium
 import dev.slav.client.android.common.ui.formatting.formatLongDate
 import dev.slav.client.android.common.ui.layouts.CardContent
 import dev.slav.client.android.common.ui.preview.PreviewWrapper
@@ -36,7 +36,7 @@ fun PostCard(
         modifier = modifier then Modifier.testTag(post.id)
     ) {
         CardContent {
-            TitleLarge(
+            TitleMedium(
                 text = post.title,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -50,7 +50,7 @@ fun PostCard(
                 post = post,
                 modifier = Modifier.fillMaxWidth()
             )
-            BodyLarge(
+            BodyMedium(
                 text = post.abstract,
                 modifier = Modifier.fillMaxWidth()
             )
