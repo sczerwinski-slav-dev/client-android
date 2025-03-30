@@ -22,3 +22,10 @@ val SpacingMedium = 12.dp
  * Ideal for padding of containers.
  */
 val SpacingLarge = 16.dp
+
+/**
+ * Indentation spacing.
+ *
+ * Ideal for indentation of list items.
+ */
+val SpacingIndent = 48.dp

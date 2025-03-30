@@ -7,6 +7,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import dev.slav.client.android.common.ui.preview.PreviewWrapper
 
@@ -15,16 +16,22 @@ import dev.slav.client.android.common.ui.preview.PreviewWrapper
  *
  * @param text Text of the body.
  * @param modifier Modifier to be applied to this text.
+ * @param overflow Text overflow handling strategy.
+ * @param maxLines Maximum number of lines to be displayed.
  */
 @Composable
 fun BodyLarge(
     text: String,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    overflow: TextOverflow = TextOverflow.Clip,
+    maxLines: Int = Int.MAX_VALUE,
 ) {
     Text(
         text = text,
         modifier = modifier,
-        style = MaterialTheme.typography.bodyLarge
+        style = MaterialTheme.typography.bodyLarge,
+        overflow = overflow,
+        maxLines = maxLines
     )
 }
 

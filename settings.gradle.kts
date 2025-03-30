@@ -31,3 +31,4 @@ include(":modules:common:network")
 include(":modules:common:ui")
 
 include(":modules:features:posts")
+include(":modules:features:settings")
