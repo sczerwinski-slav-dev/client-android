@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="settings_system_theme">Use system colors</string>
+    <string name="settings_override_system_dark_mode">Override system dark mode</string>
+    <string name="settings_dark_mode">Dark mode</string>
+</resources>

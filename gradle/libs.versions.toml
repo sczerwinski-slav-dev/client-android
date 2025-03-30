@@ -2,6 +2,7 @@
 agp = "8.9.1"
 kotlin = "2.1.20"
 serialization = "1.8.0"
+coroutines = "1.10.1"
 ksp = "2.1.20-1.0.32"
 coreKtx = "1.15.0"
 androidxJunit = "1.2.1"
@@ -21,11 +22,14 @@ junit = "5.12.1"
 mockito = "5.16.1"
 mockitoKotlin = "5.4.0"
 assertj = "3.27.3"
+turbine = "1.2.0"
 androidJUnit5 = "1.12.0.0"
 detekt = "1.23.8"
 
 [libraries]
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serialization" }
+
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidxJunit" }
@@ -66,6 +70,8 @@ mockito-android = { group = "org.mockito", name = "mockito-android", version.ref
 mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockitoKotlin" }
 
 assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 
 detekt-cli = { group = "io.gitlab.arturbosch.detekt", name = "detekt-cli", version.ref = "detekt" }
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }

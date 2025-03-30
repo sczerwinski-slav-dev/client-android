@@ -12,6 +12,8 @@ import androidx.navigation.navDeepLink
 import dev.slav.client.android.R
 import dev.slav.client.android.posts.navigation.PostsNavDestination
 import dev.slav.client.android.posts.ui.PostsListScreen
+import dev.slav.client.android.settings.navigation.SettingsNavDestination
+import dev.slav.client.android.settings.ui.SettingsScreen
 
 /**
  * Home screen navigation host.
@@ -48,6 +50,14 @@ fun HomeNavHost(
                 snackbarHostState = snackbarHostState,
                 navController = parentNavController
             )
+        }
+
+        composable<SettingsNavDestination.Settings>(
+            deepLinks = listOf(
+                navDeepLink<SettingsNavDestination.Settings>(basePath = "$navBaseUrl/settings")
+            )
+        ) {
+            SettingsScreen()
         }
     }
 }

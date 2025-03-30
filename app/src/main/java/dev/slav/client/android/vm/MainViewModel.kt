@@ -2,15 +2,17 @@ package dev.slav.client.android.vm
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import dev.slav.client.android.settings.domain.Settings
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
 
 /**
  * View model for main activity.
  */
 @HiltViewModel
-class MainViewModel @Inject constructor() : ViewModel() {
+class MainViewModel @Inject constructor(
+    private val settings: Settings
+) : ViewModel() {
 
     /**
      * System theme indicator.
@@ -19,7 +21,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
      * instead of application theme colors.
      */
     val systemTheme: Flow<Boolean>
-        get() = flowOf(false)
+        get() = settings.systemTheme
 
     /**
      * Dark mode indicator.
@@ -27,5 +29,5 @@ class MainViewModel @Inject constructor() : ViewModel() {
      * If `null`, system dark mode setting should be used.
      */
     val darkMode: Flow<Boolean?>
-        get() = flowOf(true)
+        get() = settings.darkMode
 }

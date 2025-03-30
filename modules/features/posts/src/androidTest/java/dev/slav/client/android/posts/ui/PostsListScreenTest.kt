@@ -53,13 +53,17 @@ class PostsListScreenTest {
     )
     fun shouldDisplayPostTitle(extension: ComposeExtension) = extension.use {
         setContent {
-            SlavDevTheme {
-                PostsListScreen(
-                    posts = listOf(TestData.post),
-                    onPostClick = {},
-                    onRefresh = {},
-                    loading = false
-                )
+            DeviceConfigurationOverride(
+                DeviceConfigurationOverride.Locales(LocaleList("en-rUK"))
+            ) {
+                SlavDevTheme {
+                    PostsListScreen(
+                        posts = listOf(TestData.post),
+                        onPostClick = {},
+                        onRefresh = {},
+                        loading = false
+                    )
+                }
             }
         }
 
@@ -101,13 +105,17 @@ class PostsListScreenTest {
     )
     fun shouldDisplayPostCategories(extension: ComposeExtension) = extension.use {
         setContent {
-            SlavDevTheme {
-                PostsListScreen(
-                    posts = listOf(TestData.post),
-                    onPostClick = {},
-                    onRefresh = {},
-                    loading = false
-                )
+            DeviceConfigurationOverride(
+                DeviceConfigurationOverride.Locales(LocaleList("en-rUK"))
+            ) {
+                SlavDevTheme {
+                    PostsListScreen(
+                        posts = listOf(TestData.post),
+                        onPostClick = {},
+                        onRefresh = {},
+                        loading = false
+                    )
+                }
             }
         }
 
@@ -125,13 +133,17 @@ class PostsListScreenTest {
     )
     fun shouldDisplayPostTags(extension: ComposeExtension) = extension.use {
         setContent {
-            SlavDevTheme {
-                PostsListScreen(
-                    posts = listOf(TestData.post),
-                    onPostClick = {},
-                    onRefresh = {},
-                    loading = false
-                )
+            DeviceConfigurationOverride(
+                DeviceConfigurationOverride.Locales(LocaleList("en-rUK"))
+            ) {
+                SlavDevTheme {
+                    PostsListScreen(
+                        posts = listOf(TestData.post),
+                        onPostClick = {},
+                        onRefresh = {},
+                        loading = false
+                    )
+                }
             }
         }
 
@@ -149,13 +161,17 @@ class PostsListScreenTest {
     )
     fun shouldDisplayPostAbstract(extension: ComposeExtension) = extension.use {
         setContent {
-            SlavDevTheme {
-                PostsListScreen(
-                    posts = listOf(TestData.post),
-                    onPostClick = {},
-                    onRefresh = {},
-                    loading = false
-                )
+            DeviceConfigurationOverride(
+                DeviceConfigurationOverride.Locales(LocaleList("en-rUK"))
+            ) {
+                SlavDevTheme {
+                    PostsListScreen(
+                        posts = listOf(TestData.post),
+                        onPostClick = {},
+                        onRefresh = {},
+                        loading = false
+                    )
+                }
             }
         }
 
