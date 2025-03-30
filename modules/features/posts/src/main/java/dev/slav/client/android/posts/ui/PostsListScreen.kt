@@ -29,6 +29,7 @@ import kotlinx.coroutines.launch
 /**
  * Posts list screen.
  *
+ * @param snackbarHostState Snackbar host state used for error notifications.
  * @param navController Navigation controller used when navigating from this screen.
  * @param viewModel View model.
  */

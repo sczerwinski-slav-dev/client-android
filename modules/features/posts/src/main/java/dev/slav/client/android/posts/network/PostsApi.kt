@@ -5,6 +5,7 @@ import it.czerwinski.android.hilt.annotations.FactoryMethod
 import retrofit2.Retrofit
 import retrofit2.create
 import retrofit2.http.GET
+import javax.inject.Singleton
 
 /**
  * REST API for blog posts.
@@ -32,6 +33,7 @@ interface PostsApi {
          * @return New instance of blog posts API.
          */
         @FactoryMethod
+        @Singleton
         fun create(retrofit: Retrofit): PostsApi =
             retrofit.create()
     }

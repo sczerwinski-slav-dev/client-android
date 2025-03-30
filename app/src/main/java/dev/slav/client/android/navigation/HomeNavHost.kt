@@ -18,6 +18,7 @@ import dev.slav.client.android.posts.ui.PostsListScreen
  *
  * This navigation host is used to navigate between bottom navigation bar items.
  *
+ * @param snackbarHostState Snackbar host state used for error notifications.
  * @param homeNavController Home screen navigation controller,
  * used to navigate between bottom navigation bar items on home screen.
  * @param parentNavController Parent navigation controller,

@@ -1,5 +1,6 @@
 package dev.slav.client.android.posts.domain.impl
 
+import dagger.Reusable
 import dev.slav.client.android.posts.domain.PostStub
 import dev.slav.client.android.posts.domain.PostsRepository
 import dev.slav.client.android.posts.network.PostsApi
@@ -9,7 +10,13 @@ import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 
+/**
+ * Repository of blog posts using REST API.
+ *
+ * @see PostsRepository
+ */
 @Bound
+@Reusable
 class RemotePostsRepository @Inject constructor(
     private val postsApi: PostsApi
 ) : PostsRepository {
